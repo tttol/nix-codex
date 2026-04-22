@@ -1,5 +1,4 @@
 #!/usr/bin/env nix
-# shellcheck shell=bash
 #! nix shell --inputs-from . nixpkgs#jq -c bash
 
 set -euo pipefail
@@ -8,11 +7,8 @@ readonly RELEASES_API="https://api.github.com/repos/openai/codex/releases/latest
 readonly DOWNLOAD_BASE="https://github.com/openai/codex/releases/download"
 
 curl_args=(-fsSL -H "Accept: application/vnd.github+json")
-if [[ -n "${GITHUB_TOKEN:-}" ]]; then
-    curl_args+=(-H "Authorization: Bearer ${GITHUB_TOKEN}")
-fi
-
-tag=$(curl "${curl_args[@]}" "$RELEASES_API" | jq -r '.tag_name')
+# tag=$(curl "${curl_args[@]}" "$RELEASES_API" | jq -r '.tag_name')
+tag="rust-v0.121.0"
 version="${tag#rust-v}"
 
 current_version=$(jq -r '.version' versions.json 2>/dev/null || true)
