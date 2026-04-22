@@ -1,5 +1,5 @@
 # nix-codex
-[![CI](https://github.com/tttol/nix-codex/actions/workflows/update.yml/badge.svg)]
+[![CI](https://github.com/tttol/nix-codex/actions/workflows/update.yaml/badge.svg)]
 Nix flake for [OpenAI Codex CLI](https://github.com/openai/codex). macOS only.
 
 ## Why nix-codex?
