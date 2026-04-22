@@ -1,8 +1,7 @@
 # nix-codex
-![CI](https://github.com/tttol/nix-codex/actions/workflows/update.yaml/badge.svg)
-<br/>
 Nix flake for [OpenAI Codex CLI](https://github.com/openai/codex). macOS only.
 
+![CI](https://github.com/tttol/nix-codex/actions/workflows/update.yaml/badge.svg)
 ## Why nix-codex?
 
 - **Always up-to-date** — `versions.json` is updated automatically every day via GitHub Actions, so you always have access to the latest release.
