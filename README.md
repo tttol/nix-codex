@@ -30,4 +30,12 @@ nix run github:tttol/nix-codex/0.122.0
 
 ## Update
 
-`versions.json` is updated automatically every day via GitHub Actions.
+A GitHub Actions workflow runs daily at **06:00 UTC** and performs the following steps:
+
+1. Fetch the latest release from the [openai/codex](https://github.com/openai/codex/releases) GitHub Releases API
+2. Compare with the current version in `versions.json`
+3. If a new version is found, compute the SHA-256 hash of each macOS binary and overwrite `versions.json`
+4. Commit and push the change with a version tag (e.g. `0.123.0`)
+
+If the version is already up to date, the workflow exits without making any changes.
+
