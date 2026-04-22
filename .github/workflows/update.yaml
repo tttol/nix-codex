@@ -1,6 +1,5 @@
 name: update-codex-version
 on:
-  push:
   schedule:
     - cron: "0 6 * * *"
   workflow_dispatch:
