@@ -16,7 +16,9 @@ tag=$(curl "${curl_args[@]}" "$RELEASES_API" | jq -r '.tag_name')
 version="${tag#rust-v}"
 
 current_version=$(jq -r '.version' versions.json 2>/dev/null || true)
+echo "latest codex version=$version, current version=$current_version"
 if [[ "$version" == "$current_version" ]]; then
+    echo "The codex version is already latest."
     exit 0
 fi
 
