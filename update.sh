@@ -7,8 +7,7 @@ readonly RELEASES_API="https://api.github.com/repos/openai/codex/releases/latest
 readonly DOWNLOAD_BASE="https://github.com/openai/codex/releases/download"
 
 curl_args=(-fsSL -H "Accept: application/vnd.github+json")
-# tag=$(curl "${curl_args[@]}" "$RELEASES_API" | jq -r '.tag_name')
-tag="rust-v0.121.0"
+tag=$(curl "${curl_args[@]}" "$RELEASES_API" | jq -r '.tag_name')
 version="${tag#rust-v}"
 
 current_version=$(jq -r '.version' versions.json 2>/dev/null || true)
