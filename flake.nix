@@ -19,7 +19,7 @@
           source = sources.${system};
         in
         {
-          default = pkgs.stdenv.mkDerivation {
+          default = pkgs.stdenvNoCC.mkDerivation {
             pname = "codex";
             inherit (sources) version;
 
