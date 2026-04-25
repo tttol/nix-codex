@@ -1,4 +1,5 @@
 ![CI](https://github.com/tttol/nix-codex/actions/workflows/update.yaml/badge.svg)
+![codex version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Ftttol%2Fnix-codex%2Fmain%2Fversions.json&query=%24.version&label=codex&color=blue)
 # nix-codex
 Nix flake for [OpenAI Codex CLI](https://github.com/openai/codex). macOS only.
 
