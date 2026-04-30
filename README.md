@@ -29,6 +29,15 @@ nix profile install github:tttol/nix-codex
 nix run github:tttol/nix-codex/0.122.0
 ```
 
+### Example Usage
+Create an alias like this:
+
+```sh:.zshrc
+alias ncodex='nix run github:tttol/nix-codex --refresh'
+```
+
+Now you can always use the latest version of codex without updating it manually.
+
 ## Update
 
 A GitHub Actions workflow runs daily at **06:00 UTC** and performs the following steps:
