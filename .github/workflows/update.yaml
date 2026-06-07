@@ -1,7 +1,7 @@
 name: update-codex-version
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -15,6 +15,8 @@ jobs:
         with:
           github_access_token: ${{ github.token }}
       - id: update
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           VERSION=$(./update.sh | tail -1)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
@@ -27,4 +29,3 @@ jobs:
             git tag "${{ steps.update.outputs.version }}"
             git push origin main "${{ steps.update.outputs.version }}"
           fi
-          

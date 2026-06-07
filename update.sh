@@ -7,6 +7,9 @@ readonly RELEASES_API="https://api.github.com/repos/openai/codex/releases/latest
 readonly DOWNLOAD_BASE="https://github.com/openai/codex/releases/download"
 
 curl_args=(-fsSL -H "Accept: application/vnd.github+json")
+if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+    curl_args+=(-H "Authorization: Bearer ${GITHUB_TOKEN}")
+fi
 tag=$(curl "${curl_args[@]}" "$RELEASES_API" | jq -r '.tag_name')
 version="${tag#rust-v}"
 

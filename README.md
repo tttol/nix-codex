@@ -40,7 +40,7 @@ Now you can always use the latest version of codex without updating it manually.
 
 ## Update
 
-A GitHub Actions workflow runs daily at **06:00 UTC** and performs the following steps:
+A GitHub Actions workflow runs hourly and performs the following steps:
 
 1. Fetch the latest release from the [openai/codex](https://github.com/openai/codex/releases) GitHub Releases API
 2. Compare with the current version in `versions.json`
@@ -48,4 +48,3 @@ A GitHub Actions workflow runs daily at **06:00 UTC** and performs the following
 4. Commit and push the change with a version tag (e.g. `0.123.0`)
 
 If the version is already up to date, the workflow exits without making any changes.
-
