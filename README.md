@@ -5,7 +5,7 @@ Nix flake for [OpenAI Codex CLI](https://github.com/openai/codex). macOS only.
 
 ## Why nix-codex?
 
-- **Always up-to-date** — `versions.json` is updated automatically every day via GitHub Actions, so you always have access to the latest release.
+- **Always up-to-date** — `versions.json` is updated automatically every hour via GitHub Actions, so you always have access to the latest release.
 - **Easy rollback** — every version is tagged, so switching to a previous version is a single command if a new release has a bug.
 
 ```bash
@@ -40,7 +40,7 @@ Now you can always use the latest version of codex without updating it manually.
 
 ## Update
 
-A GitHub Actions workflow runs daily at **06:00 UTC** and performs the following steps:
+A GitHub Actions workflow runs hourly and performs the following steps:
 
 1. Fetch the latest release from the [openai/codex](https://github.com/openai/codex/releases) GitHub Releases API
 2. Compare with the current version in `versions.json`
@@ -48,4 +48,3 @@ A GitHub Actions workflow runs daily at **06:00 UTC** and performs the following
 4. Commit and push the change with a version tag (e.g. `0.123.0`)
 
 If the version is already up to date, the workflow exits without making any changes.
-
