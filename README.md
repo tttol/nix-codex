@@ -5,7 +5,7 @@ Nix flake for [OpenAI Codex CLI](https://github.com/openai/codex). macOS only.
 
 ## Why nix-codex?
 
-- **Always up-to-date** — `versions.json` is updated automatically every day via GitHub Actions, so you always have access to the latest release.
+- **Always up-to-date** — `versions.json` is updated automatically every hour via GitHub Actions, so you always have access to the latest release.
 - **Easy rollback** — every version is tagged, so switching to a previous version is a single command if a new release has a bug.
 
 ```bash
